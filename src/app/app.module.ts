@@ -12,14 +12,14 @@ import { AppComponent } from './app.component';
 import { appReducer } from './store/app.state';
 import { HeaderComponent } from './header/header.component';
 import { ItemsModule } from './items/items.module';
-import { ItemModule } from './item/item.module';
+// import { ItemModule } from './item/item.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule,
     ItemsModule,
-    ItemModule,
+    // ItemModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(appReducer),

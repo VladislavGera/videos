@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ItemComponent } from './item/item.component';
 import { ItemsComponent } from './items/items.component';
 
 const routes: Routes = [
@@ -10,8 +9,8 @@ const routes: Routes = [
   },
   {
     path: 'item',
-    component: ItemComponent,
-  }
+    loadChildren: () => import('./item/item.module').then((m) => m.ItemModule),
+  },
 ];
 
 @NgModule({
