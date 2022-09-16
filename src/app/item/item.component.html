@@ -1,0 +1,26 @@
+<div class="center">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{ item.meetingName }}</mat-card-title>
+      <p>{{ item.date | date }}</p>
+    </mat-card-header>
+    <iframe
+      class="video"
+      [src]="urlSafe"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+    <mat-card-content>
+      <p>length: {{ item.length * 1000 | date: "H:mm:ss":"UTC" }}</p>
+      <p>Participants: {{ item.nrOfParticipants }}</p>
+      <p>score: {{ item.score }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="goToBack()" color="accent">
+        Go to list
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

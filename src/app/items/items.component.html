@@ -1,0 +1,19 @@
+<div class="conteyner">
+  <mat-list class="items" role="list">
+    <mat-card *ngFor="let item of items" class="item">
+      <mat-card-title>{{ item.meetingName }}</mat-card-title>
+      <p>{{ item.date | date }}</p>
+      <mat-card-content>
+        <p>Participants: {{ item.nrOfParticipants }}</p>
+      </mat-card-content>
+      <mat-card-content>
+        <p>Score: {{ item.score }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="getItem(item)" mat-raised-button color="accent">
+          More details
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-list>
+</div>
