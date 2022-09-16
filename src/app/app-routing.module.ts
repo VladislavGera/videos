@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ItemsComponent } from './items/items.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./items/items.module').then((m) => m.ItemsModule),
+    loadChildren: () =>
+      import('./items/components/items/items.module').then(
+        (m) => m.ItemsModule
+      ),
   },
   {
     path: 'item',
-    loadChildren: () => import('./item/item.module').then((m) => m.ItemModule),
+    loadChildren: () =>
+      import('./items/components/item/item.module').then((m) => m.ItemModule),
   },
 ];
 

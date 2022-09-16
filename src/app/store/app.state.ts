@@ -1,7 +1,7 @@
-import { itemsReducer } from '../items/state/items.reducer';
-import { itemReducer } from '../item/state/item.reducer';
-import { Item } from '../models/item.model';
-import { Items } from '../models/items.model';
+import { itemsReducer } from '../items/components/items/state/items.reducer';
+import { itemReducer } from '../items/components/item/state/item.reducer';
+import { Item } from '../items/components/models/item.model';
+import { Items } from '../items/components/models/items.model';
 
 export interface AppState {
   items: Items;

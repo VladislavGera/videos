@@ -1,7 +1,7 @@
 import { createReducer, on, Action } from '@ngrx/store';
 import { setItem, removeItem } from './item.action';
 import { initialState } from './item.state';
-import { Item } from 'src/app/models/item.model';
+import { Item } from 'src/app/items/components/models/item.model';
 
 const _itemReducer = createReducer(
   initialState,

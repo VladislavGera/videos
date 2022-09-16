@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { ItemRes } from 'src/app/models/item.model';
+import { ItemRes } from 'src/app/items/components/models/item.model';
 
 const getItemState = createFeatureSelector<ItemRes>('item');
 

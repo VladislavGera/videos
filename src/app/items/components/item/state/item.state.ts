@@ -1,4 +1,4 @@
-import { Item } from 'src/app/models/item.model';
+import { Item } from 'src/app/items/components/models/item.model';
 
 const item: Item = {
   date: 16596409674,

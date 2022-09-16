@@ -10,16 +10,13 @@ import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { appReducer } from './store/app.state';
-import { HeaderComponent } from './header/header.component';
-import { ItemsModule } from './items/items.module';
-// import { ItemModule } from './item/item.module';
+import { CoreModule } from './core/core.model';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    ItemsModule,
-    // ItemModule,
+    CoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(appReducer),
