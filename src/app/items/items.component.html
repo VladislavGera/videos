@@ -1,19 +1,35 @@
-<div class="conteyner">
-  <mat-list class="items" role="list">
-    <mat-card *ngFor="let item of items" class="item">
-      <mat-card-title>{{ item.meetingName }}</mat-card-title>
-      <p>{{ item.date | date }}</p>
-      <mat-card-content>
-        <p>Participants: {{ item.nrOfParticipants }}</p>
-      </mat-card-content>
-      <mat-card-content>
-        <p>Score: {{ item.score }}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button (click)="getItem(item)" mat-raised-button color="accent">
-          More details
-        </button>
-      </mat-card-actions>
-    </mat-card>
-  </mat-list>
+<div class="list">
+  <table mat-table [dataSource]="items" class="mat-elevation-z8">
+    <ng-container matColumnDef="meetingName">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.meetingName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="length">
+      <th mat-header-cell *matHeaderCellDef>Length</th>
+      <td mat-cell *matCellDef="let element">{{ element.length }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nrOfParticipants">
+      <th mat-header-cell *matHeaderCellDef>Participants</th>
+      <td mat-cell *matCellDef="let element">{{ element.nrOfParticipants }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="score">
+      <th mat-header-cell *matHeaderCellDef>Score</th>
+      <td mat-cell *matCellDef="let element">{{ element.score }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let element">{{ element.date | date }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      mat-row
+      (click)="getItem(row)"
+      *matRowDef="let row; columns: displayedColumns"
+    ></tr>
+  </table>
 </div>

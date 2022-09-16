@@ -14,6 +14,13 @@ import { Item } from '../models/item.model';
 })
 export class ItemsComponent implements OnInit {
   items!: Item[];
+  displayedColumns: string[] = [
+    'meetingName',
+    'length',
+    'nrOfParticipants',
+    'score',
+    'date',
+  ];
 
   constructor(private store: Store<AppState>, private router: Router) {}
 
